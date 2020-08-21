@@ -1,0 +1,23 @@
+.AvatarContainer {
+    background: linear-gradient(-60deg, #904e05, #e73c7e, #ee7752);
+    padding: var(--padding--xxs);
+    border-radius: 100%;
+}
+.Avatar {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.Avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.Avatar.big {
+    height: 200px;
+}
+.Avatar.small {
+    height: 50px;
+}

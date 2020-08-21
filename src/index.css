@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: var(--font-size--m);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+h1 {
+    font-size: var(--font-size--xxxl);
+}
+
+h3 {
+    font-weight: var(--font-weight--bold);
+    margin-top: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+    --padding--xxs: 4px;
+    --padding--xs: 8px;
+    --padding--s: 12px;
+    --padding--m: 24px;
+    --padding--l: 32px;
+    --padding--xl: 48px;
+    --padding--xxl: 64px;
+    --padding--xxxl: 86px;
+}
+
+:root {
+    --font-size--xxs: 6px;
+    --font-size--xs: 8px;
+    --font-size--s: 10px;
+    --font-size--m: 12px;
+    --font-size--l: 14px;
+    --font-size--xl: 16px;
+    --font-size--xxl: 18px;
+    --font-size--xxxl: 140px;
+    --font-size--xxxxl: 350px;
+    --font-size--big-icon: 30px;
+}
+
+:root {
+    --font-weight--lighter: lighter;
+    --font-weight--normal: normal;
+    --font-weight--bold: 500;
+    --font-weight--bolder: bolder;
+}
+
+:root {
+    --shadow--small: 0 5px 10px rgba(0,0,0,0.12);
 }

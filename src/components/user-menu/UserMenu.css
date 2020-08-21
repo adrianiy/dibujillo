@@ -1,0 +1,8 @@
+.UserMenu {
+    backdrop-filter: saturate(180%) blur(5px);
+    box-shadow: var(--shadow--small);
+    padding: var(--padding--m);
+}
+.UserMenu h3 {
+    text-transform: uppercase;
+}

@@ -1,4 +1,4 @@
-    {
+{
     "name": "dibujillo",
     "version": "0.1.0",
     "private": true,
@@ -10,7 +10,10 @@
         "lint-staged": "^10.2.11",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-google-login": "^5.1.21",
+        "react-redux": "^7.2.1",
         "react-scripts": "3.4.3",
+        "redux": "^4.0.5",
         "typescript": "^3.8.3"
     },
     "devDependencies": {
@@ -39,14 +42,14 @@
     },
     "husky": {
         "hooks": {
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-        "pre-commit": "lint-staged",
-        "pre-push": "npm run lint && npm run test"
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged",
+            "pre-push": "npm run lint && npm run test"
         }
     },
     "lint-staged": {
         "*.{js, json, ts}": [
-        "eslint --fix"
+            "eslint --fix"
         ]
     },
     "jest": {
@@ -59,7 +62,10 @@
         ],
         "collectCoverageFrom": [
             "src/**/**",
+            "!**/pages/room/Room.js",
+            "!**/components/**",
             "!**/index.js",
+            "!**/test/**",
             "!**/serviceWorker.js",
             "!**/**/*.json",
             "!**/tests/**",
@@ -78,4 +84,4 @@
             "last 1 safari version"
         ]
     }
-    }
+}
