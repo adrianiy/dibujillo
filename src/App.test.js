@@ -1,9 +1,20 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import { getMockProvider } from './global/utils/test/store.mock';
 
-test('renders App', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/Dibujillo/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('App test suite', () => {
+    let rendered;
+
+    beforeEach(() => {
+         ({ rendered } = getMockProvider(<App/>, {
+             user: { loggedIn: false },
+         }));
+    });
+
+    test('renders App', () => {
+
+      const { getByText } = rendered;
+      const linkElement = getByText(/Dibujillo/i);
+      expect(linkElement).toBeInTheDocument();
+    });
+})
