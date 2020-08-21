@@ -1,4 +1,4 @@
-    {
+{
     "name": "dibujillo",
     "version": "0.1.0",
     "private": true,
@@ -39,14 +39,14 @@
     },
     "husky": {
         "hooks": {
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-        "pre-commit": "lint-staged",
-        "pre-push": "npm run lint && npm run test"
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged",
+            "pre-push": "npm run lint && npm run test"
         }
     },
     "lint-staged": {
         "*.{js, json, ts}": [
-        "eslint --fix"
+            "eslint --fix"
         ]
     },
     "jest": {
@@ -59,6 +59,8 @@
         ],
         "collectCoverageFrom": [
             "src/**/**",
+            "!**/pages/room/Room.js",
+            "!**/components/**",
             "!**/index.js",
             "!**/serviceWorker.js",
             "!**/**/*.json",
@@ -78,4 +80,4 @@
             "last 1 safari version"
         ]
     }
-    }
+}
