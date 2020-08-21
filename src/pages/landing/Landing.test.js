@@ -1,5 +1,4 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import Landing from './Landing';
 import { getMockProvider } from '../../global/utils/test/store.mock';
 
