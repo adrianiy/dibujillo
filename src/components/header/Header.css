@@ -1,0 +1,32 @@
+
+.Header {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.Header h1 {
+    margin: 0;
+    animation: flow 30s ease-in-out infinite;
+    background: linear-gradient(-60deg, #904e95, #904e05, #e73c7e, #ee7752);
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Header h1 em {
+    font-size: var(--font-size--xxxl);
+}
+@keyframes flow {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}

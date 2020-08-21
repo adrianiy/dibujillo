@@ -15,6 +15,9 @@
     background: black;
     color: white;
 }
+.button.red {
+    color: red;
+}
 .button:hover {
     border-color: rgba(0, 0, 0, .2);
 }
@@ -23,4 +26,8 @@
     border-width: 1px;
     background: transparent;
     color: black;
+}
+.button.text {
+    border: none;
+    padding: var(--padding--xs) 0;
 }
