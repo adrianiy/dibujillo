@@ -1,6 +1,6 @@
 {
     "name": "dibujillo",
-    "version": "0.1.0",
+    "version": "1.0.2",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^4.2.4",
@@ -56,12 +56,12 @@
         "plugins": [
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
-        [
-            "@semantic-release/npm",
-            {
-                "npmPublish": false
-            }
-        ],
+            [
+                "@semantic-release/npm",
+                {
+                    "npmPublish": false
+                }
+            ],
             "@semantic-release/changelog",
             "@semantic-release/git",
             "@semantic-release/github"
