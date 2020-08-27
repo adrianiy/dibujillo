@@ -41,7 +41,10 @@ const propTypes = {
     className: PropTypes.string,
     style: PropTypes.objectOf(PropTypes.object),
     onClick: PropTypes.func,
-    children: PropTypes.elementType,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
 };
 
 const defaultProps = {

@@ -27,7 +27,7 @@ export default function Configurator({ privateRoom }) {
     const _renderLinkShare = () => (
         <ColumnLayout className="linkColumn">
             <h3>Comparte el link con tus amigos!</h3>
-            <Button className="text" icon="link" color="blue" onClick={_copyLink}>
+            <Button testId="link-button" className="text" icon="link" color="blue" onClick={_copyLink}>
                 Copiar enlace
             </Button>
         </ColumnLayout>
@@ -59,10 +59,10 @@ export default function Configurator({ privateRoom }) {
     );
 
     return (
-        <ColumnLayout className="configuratorContainer">
+        <ColumnLayout testId="configurator" className="configuratorContainer">
             <h2>
                 Configura tu partida
-                { privateRoom ? 'privada' : 'pública' }
+                { privateRoom ? ' privada' : ' pública' }
             </h2>
             { _renderShareSection() }
             { _renderBottomButtons() }

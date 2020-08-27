@@ -40,6 +40,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --coverage --watchAll=false --env=jest-environment-jsdom-sixteen --silent",
+        "test:nosilent": "react-scripts test --coverage --watchAll=false --env=jest-environment-jsdom-sixteen",
         "test:nocov": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --silent",
         "eject": "react-scripts eject",
         "lint": "eslint ./src --ext js --fix"
@@ -86,7 +87,6 @@
         "collectCoverageFrom": [
             "src/**/**",
             "!**/pages/room/Room.js",
-            "!**/components/**",
             "!**/index.js",
             "!**/test/**",
             "!**/serviceWorker.js",

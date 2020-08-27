@@ -5,7 +5,7 @@ import { RowLayout } from '../../global/Layout';
 import './Button.css';
 
 export default function Button({
-    icon, color, className, onClick, children,
+    icon, color, className, onClick, children, testId,
 }) {
     const renderIcon = () => {
         const willRenderIcon = icon;
@@ -20,6 +20,7 @@ export default function Button({
 
     return (
         <RowLayout
+            testId={testId}
             dist="middle space-between"
             className={cls('button', color, className)}
             onClick={onClick}
@@ -36,6 +37,7 @@ Button.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
     children: PropTypes.elementType,
+    testId: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -44,4 +46,5 @@ Button.defaultProps = {
     className: '',
     onClick: null,
     children: null,
+    testId: '',
 };
