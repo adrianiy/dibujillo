@@ -32,3 +32,22 @@ describe('Configurator private test suite', () => {
         expect(navigator.clipboard.writeText).toHaveBeenCalled();
     });
 });
+
+describe('Configurator public test suite', () => {
+    let rendered;
+
+    beforeEach(() => {
+        ({ rendered } = getMockProvider(<Configurator privateRoom={false} />, {
+            user: { loggedIn: true, name: 'test' },
+        }));
+    });
+
+    test('render test', () => {
+        const { getByTestId } = rendered;
+        try {
+            getByTestId('share-section');
+        } catch (err) {
+            expect(err).toBeDefined();
+        }
+    });
+});

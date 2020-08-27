@@ -15,7 +15,7 @@ export default function LandingForms() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    /* istanbul ignore function */
+    /* istanbul ignore next func */
     const _googleResponse = (response) => {
         if (response.profileObj) {
             dispatch(actions.user.setUser(response.profileObj));
@@ -35,7 +35,7 @@ export default function LandingForms() {
         </form>
     );
 
-    const _showConfigurator = (privateRoom = false) => {
+    const _showConfigurator = (privateRoom) => {
         if (privateRoom) {
             setShorwConfigurator(1);
         } else {
@@ -47,10 +47,10 @@ export default function LandingForms() {
         <RowLayout dist="row middle spaced" className={cls(styles.container, 'animated fadeIn')}>
             <ColumnLayout dist="spaced center" className={styles.inputContainer}>
                 <h3>Crea un nuevo lienzo!</h3>
-                <Button icon="lock" color="black" onClick={() => _showConfigurator(true)}>
+                <Button testId="config-private" icon="lock" color="black" onClick={() => _showConfigurator(true)}>
                     Crea una partida privada
                 </Button>
-                <Button icon="public" color="black" onClick={() => _showConfigurator(false)}>
+                <Button testId="config-public" icon="public" color="black" onClick={() => _showConfigurator(false)}>
                     Crea una partida publica
                 </Button>
             </ColumnLayout>

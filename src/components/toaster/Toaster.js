@@ -10,7 +10,7 @@ export default function Toaster() {
 
     useEffect(() => {
         if (toasterData.display) {
-            setTimeout(() => {
+            setTimeout(/* istanbul ignore next func */() => {
                 dispatch(actions.toaster.hideToaster());
             }, 1500);
         }

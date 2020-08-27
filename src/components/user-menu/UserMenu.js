@@ -11,6 +11,7 @@ export default function UserMenu({ className }) {
     const [user] = useSelector((state) => [state.user]);
     const dispatch = useDispatch();
 
+    // istanbul ignore next func
     const _logoutSucces = () => {
         dispatch(actions.user.logout());
     };
@@ -21,6 +22,7 @@ export default function UserMenu({ className }) {
     });
 
     const _logout = () => {
+        // istanbul ignore else
         if (loaded) {
             signOut();
         }

@@ -3,6 +3,13 @@ import { fireEvent } from '@testing-library/react';
 import LandingForms from './LandingForms';
 import getMockProvider from '../../../global/utils/test/store.mock';
 
+let configuratorTestValue = null;
+
+jest.mock('../../../components/configurator/Configurator', () => ({ privateRoom }) => {
+    configuratorTestValue = privateRoom;
+    return null;
+});
+
 describe('Landing logged test suite', () => {
     let rendered;
 
@@ -23,6 +30,20 @@ describe('Landing logged test suite', () => {
         const input = getByTestId('room-id');
         fireEvent.change(input, { target: { value: 'test' } });
         expect(input.value).toEqual('test');
+    });
+
+    test('private match configurator test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('config-private');
+        fireEvent.click(button);
+        expect(configuratorTestValue).toBeTruthy();
+    });
+
+    test('public match configurator test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('config-public');
+        fireEvent.click(button);
+        expect(configuratorTestValue).toBeFalsy();
     });
 });
 

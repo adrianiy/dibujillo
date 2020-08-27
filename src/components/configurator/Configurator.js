@@ -41,7 +41,7 @@ export default function Configurator({ privateRoom }) {
     );
 
     const _renderShareSection = () => (privateRoom ? (
-        <ColumnLayout>
+        <ColumnLayout testId="share-section">
             {_renderLinkShare()}
             {_renderFriendsShare()}
         </ColumnLayout>
