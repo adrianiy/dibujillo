@@ -1,15 +1,15 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 import LandingForms from './LandingForms';
-import { getMockProvider } from '../../../global/utils/test/store.mock';
+import getMockProvider from '../../../global/utils/test/store.mock';
 
 describe('Landing logged test suite', () => {
     let rendered;
 
     beforeEach(() => {
-         ({ rendered } = getMockProvider(<LandingForms/>, {
-             user: { loggedIn: true },
-         }));
+        ({ rendered } = getMockProvider(<LandingForms />, {
+            user: { loggedIn: true },
+        }));
     });
 
     test('renders Landing test', () => {
@@ -30,9 +30,9 @@ describe('Landing not logged test suite', () => {
     let rendered;
 
     beforeEach(() => {
-         ({ rendered } = getMockProvider(<LandingForms/>, {
-             user: { loggedIn: false },
-         }));
+        ({ rendered } = getMockProvider(<LandingForms />, {
+            user: { loggedIn: false },
+        }));
     });
 
     test('input onChange action test', () => {

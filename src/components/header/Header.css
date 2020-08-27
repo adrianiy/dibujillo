@@ -7,7 +7,7 @@
 .Header h1 {
     margin: 0;
     animation: flow 30s ease-in-out infinite;
-    background: linear-gradient(-60deg, #904e95, #904e05, #e73c7e, #ee7752);
+    background: var(--gradient-color);
     background-size: 300%;
 
     -webkit-background-clip: text;

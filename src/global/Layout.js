@@ -1,28 +1,59 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import { cls } from "./utils";
+import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-unresolved
+import cls from './utils';
 
-export function RowLayout(props) {
+export function RowLayout({
+    testId, dist, className, style, onClick, children,
+}) {
     return (
         <div
-            data-testid={props['data-testid']}
-            className={cls( 'row', props.dist, props.className )}
-            style={props.style}
-            onClick={props.onClick}
+            data-testid={testId}
+            className={cls('row', dist, className)}
+            style={style}
+            onClick={onClick}
         >
-            { props.children }
-        </div>
-    )
-}
-
-export function ColumnLayout(props) {
-    return (
-        <div
-            data-testid={props["data-testid"]}
-            className={cls("column", props.dist, props.className)}
-            style={props.style}
-            onClick={props.onClick}
-        >
-            {props.children}
+            { children }
         </div>
     );
 }
+
+export function ColumnLayout({
+    testId, dist, className, style, onClick, children,
+}) {
+    return (
+        <div
+            data-testid={testId}
+            className={cls('column', dist, className)}
+            style={style}
+            onClick={onClick}
+        >
+            {children}
+        </div>
+    );
+}
+
+const propTypes = {
+    testId: PropTypes.string,
+    dist: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.objectOf(PropTypes.object),
+    onClick: PropTypes.func,
+    children: PropTypes.elementType,
+};
+
+const defaultProps = {
+    testId: '',
+    dist: '',
+    className: '',
+    style: {},
+    onClick: null,
+    children: null,
+};
+
+RowLayout.propTypes = propTypes;
+ColumnLayout.propTypes = propTypes;
+RowLayout.defaultProps = defaultProps;
+ColumnLayout.defaultProps = defaultProps;

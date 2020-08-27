@@ -29,6 +29,12 @@ h3 {
 }
 
 :root {
+    --gradient-color: linear-gradient(-60deg, #904e95, #904e05, #e73c7e, #ee7752);
+    --bg-color: white;
+    --text-color: black;
+}
+
+:root {
     --padding--xxs: 4px;
     --padding--xs: 8px;
     --padding--s: 12px;
@@ -61,4 +67,8 @@ h3 {
 
 :root {
     --shadow--small: 0 5px 10px rgba(0,0,0,0.12);
+}
+
+:root {
+    --backdrop: saturate(180%) blur(5px);
 }

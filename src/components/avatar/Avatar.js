@@ -1,5 +1,6 @@
-import React from "react";
-import "./Avatar.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Avatar.css';
 
 export default function Avatar({ image, title }) {
     return (
@@ -10,3 +11,12 @@ export default function Avatar({ image, title }) {
         </div>
     );
 }
+
+Avatar.propTypes = {
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string,
+};
+
+Avatar.defaultProps = {
+    title: '',
+};

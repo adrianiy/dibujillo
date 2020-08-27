@@ -1,0 +1,17 @@
+.toasterContainer {
+    border-radius: 4px;
+    background: green;
+    padding: var(--padding--xs) var(--padding--m);
+    box-shadow: var(--shadow--small);
+    color: white;
+}
+
+.toasterWrapper {
+    width: 100%;
+    position: fixed;
+    top: 24px;
+}
+.toasterWrapper em {
+    width: 32px;
+    font-size: var(--font-size--m);
+}
