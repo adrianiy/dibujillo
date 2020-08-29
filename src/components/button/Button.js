@@ -7,12 +7,12 @@ import './Button.css';
 export default function Button({
     icon, color, className, onClick, children, testId,
 }) {
-    const renderIcon = () => {
+    const _renderIcon = () => {
         const willRenderIcon = icon;
 
         if (willRenderIcon) {
             return (
-                <em className="material-icons-outlined">{ icon }</em>
+                <em className="material-icons">{ icon }</em>
             );
         }
         return null;
@@ -25,7 +25,7 @@ export default function Button({
             className={cls('button', color, className)}
             onClick={onClick}
         >
-            { renderIcon() }
+            { _renderIcon() }
             { children }
         </RowLayout>
     );

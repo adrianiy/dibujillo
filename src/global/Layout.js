@@ -1,39 +1,37 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved
 import cls from './utils';
 
-export function RowLayout({
+const RowLayoutFunc = ({
     testId, dist, className, style, onClick, children,
-}) {
-    return (
-        <div
-            data-testid={testId}
-            className={cls('row', dist, className)}
-            style={style}
-            onClick={onClick}
-        >
-            { children }
-        </div>
-    );
-}
+}, ref) => (
+    <div
+        ref={ref}
+        data-testid={testId}
+        className={cls('row', dist, className)}
+        style={style}
+        onClick={onClick}
+    >
+        { children }
+    </div>
+);
 
-export function ColumnLayout({
+const ColumnLayoutFunc = ({
     testId, dist, className, style, onClick, children,
-}) {
-    return (
-        <div
-            data-testid={testId}
-            className={cls('column', dist, className)}
-            style={style}
-            onClick={onClick}
-        >
-            {children}
-        </div>
-    );
-}
+}, ref) => (
+    <div
+        ref={ref}
+        data-testid={testId}
+        className={cls('column', dist, className)}
+        style={style}
+        onClick={onClick}
+    >
+        {children}
+    </div>
+);
 
 const propTypes = {
     testId: PropTypes.string,
@@ -56,7 +54,10 @@ const defaultProps = {
     children: null,
 };
 
-RowLayout.propTypes = propTypes;
-ColumnLayout.propTypes = propTypes;
-RowLayout.defaultProps = defaultProps;
-ColumnLayout.defaultProps = defaultProps;
+RowLayoutFunc.propTypes = propTypes;
+ColumnLayoutFunc.propTypes = propTypes;
+RowLayoutFunc.defaultProps = defaultProps;
+ColumnLayoutFunc.defaultProps = defaultProps;
+
+export const ColumnLayout = forwardRef(ColumnLayoutFunc);
+export const RowLayout = forwardRef(RowLayoutFunc);

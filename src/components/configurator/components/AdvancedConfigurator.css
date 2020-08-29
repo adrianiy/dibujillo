@@ -1,0 +1,20 @@
+.configLine {
+    padding: var(--padding--s) 0;
+    border-bottom: var(--border--light);
+    font-weight: var(--font-weight--bold);
+}
+
+.configLine:last-of-type {
+    border-bottom: none;
+}
+
+.configLine .caption {
+    font-weight: var(--font-weight--normal)
+}
+
+.configLine input {
+    width: 20px;
+    height: 10px;
+    border: var(--border);
+    text-align: center;
+}

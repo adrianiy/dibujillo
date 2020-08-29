@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import GoogleLogin from 'react-google-login';
 import { RowLayout, ColumnLayout } from '../../../global/Layout';
@@ -8,12 +8,17 @@ import cls from '../../../global/utils';
 import actions from '../../../global/utils/store/actions';
 
 import styles from '../Landing.module.css';
+import useClickAwayEffect from '../../../global/effects/ClickAwayEffect';
 
 export default function LandingForms() {
     const [roomId, setRoomId] = useState('');
-    const [showConfigurator, setShorwConfigurator] = useState(0);
+    const [showConfigurator, setShowConfigurator] = useState(0);
     const user = useSelector((state) => state.user);
+    const configRef = useRef(null);
     const dispatch = useDispatch();
+
+    /* istanbul ignore next func */
+    useClickAwayEffect(configRef, () => setShowConfigurator(0));
 
     /* istanbul ignore next func */
     const _googleResponse = (response) => {
@@ -37,9 +42,9 @@ export default function LandingForms() {
 
     const _showConfigurator = (privateRoom) => {
         if (privateRoom) {
-            setShorwConfigurator(1);
+            setShowConfigurator(1);
         } else {
-            setShorwConfigurator(2);
+            setShowConfigurator(2);
         }
     };
 
@@ -76,7 +81,7 @@ export default function LandingForms() {
     );
 
     const _renderConfigurator = () => (
-        <Configurator privateRoom={showConfigurator === 1} />
+        <Configurator ref={configRef} privateRoom={showConfigurator === 1} />
     );
 
     return (

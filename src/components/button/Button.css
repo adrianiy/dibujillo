@@ -9,6 +9,7 @@
 
 .button em {
     margin-right: var(--padding--xs);
+    font-size: 21px;
 }
 
 .button.black {
@@ -19,7 +20,8 @@
     color: red;
 }
 .button.blue {
-    color: #579cb3;
+    color: #18a0fb;
+    font-weight: var(--font-weight--lighter);
 }
 .button:hover {
     border-color: rgba(0, 0, 0, .2);
@@ -29,9 +31,6 @@
     border-width: 1px;
     background: transparent;
     color: black;
-}
-.button.blue:hover {
-    color: #0061a7;
 }
 .button.text {
     border: none;

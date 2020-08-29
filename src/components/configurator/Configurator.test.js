@@ -51,3 +51,74 @@ describe('Configurator public test suite', () => {
         }
     });
 });
+
+describe('Configurator advanced config test suite', () => {
+    let rendered;
+
+    beforeEach(() => {
+        ({ rendered } = getMockProvider(<Configurator privateRoom />, {
+            user: { loggedIn: true, name: 'test' },
+        }));
+        const { getByTestId } = rendered;
+        const button = getByTestId('adv-conf-button');
+        fireEvent.click(button);
+    });
+
+    test('show advanced configuration tabs test', () => {
+        const { getByTestId } = rendered;
+        const element = getByTestId('tabs');
+        expect(element).toBeDefined();
+    });
+
+    test('hide advanced config test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('adv-conf-button');
+        const tab = getByTestId('tab-players');
+        fireEvent.click(tab);
+        const playersSection = getByTestId('players-section');
+        expect(playersSection).toBeDefined();
+        fireEvent.click(button);
+        const shareSection = getByTestId('share-section');
+        expect(shareSection).toBeDefined();
+    });
+
+    test('show share tab test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('tab-share');
+        fireEvent.click(button);
+        const element = getByTestId('share-section');
+        expect(element).toBeDefined();
+    });
+
+    test('show players tab test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('tab-players');
+        fireEvent.click(button);
+        const element = getByTestId('players-section');
+        expect(element).toBeDefined();
+    });
+
+    test('show rounds tab test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('tab-rounds');
+        fireEvent.click(button);
+        const element = getByTestId('rounds-section');
+        expect(element).toBeDefined();
+    });
+
+    test('show words tab test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('tab-words');
+        fireEvent.click(button);
+        const element = getByTestId('words-section');
+        expect(element).toBeDefined();
+    });
+
+    test('show minigames tab test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('tab-minigames');
+        fireEvent.click(button);
+        const element = getByTestId('minigames-section');
+        expect(element).toBeDefined();
+    });
+});
