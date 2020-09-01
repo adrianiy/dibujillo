@@ -5,7 +5,8 @@ export default function Header() {
     return (
         <header className="Header">
             <h1>
-                Dibujillo.
+                <span>Dibujillo</span>
+                .
                 <em className="material-icons-outlined">edit</em>
             </h1>
         </header>

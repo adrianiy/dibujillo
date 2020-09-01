@@ -30,10 +30,6 @@ h3 {
     padding-top: var(--padding--xxs);
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 :root {
     --gradient-color: linear-gradient(-60deg, #904e95, #904e05, #e73c7e, #ee7752);
     --gradient-color--light: linear-gradient(-60deg, #e73c7e, #ee7752);

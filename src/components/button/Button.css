@@ -5,6 +5,7 @@
     font-weight: var(--font-weight--normal);
     cursor: pointer;
     transition: all ease-in-out 300ms;
+    white-space: nowrap;
 }
 
 .button em {

@@ -4,6 +4,7 @@
     padding: var(--padding--m);
     background: var(--bg-color);
     border-radius: 4px;
+    max-width: calc(100% - var(--padding--xl));
 }
 .header {
     margin-bottom: var(--padding--m);

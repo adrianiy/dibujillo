@@ -13,7 +13,7 @@ describe('Header test suite', () => {
 
     test('render test', () => {
         const { getByText } = rendered;
-        const element = getByText('Dibujillo.');
+        const element = getByText('Dibujillo');
         expect(element).toBeDefined();
     });
 });

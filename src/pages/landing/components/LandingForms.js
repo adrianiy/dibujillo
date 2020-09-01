@@ -7,7 +7,7 @@ import Configurator from '../../../components/configurator/Configurator';
 import cls from '../../../global/utils';
 import actions from '../../../global/utils/store/actions';
 
-import styles from '../Landing.module.css';
+import '../Landing.css';
 import useClickAwayEffect from '../../../global/effects/ClickAwayEffect';
 
 export default function LandingForms() {
@@ -30,7 +30,7 @@ export default function LandingForms() {
     const _renderJoinForm = () => (
         <form>
             <input
-                className={styles.input}
+                className="input"
                 data-testid="room-id"
                 type="text"
                 placeholder="#IdLienzo"
@@ -49,8 +49,8 @@ export default function LandingForms() {
     };
 
     const _renderRoomSelectorInputs = () => (
-        <RowLayout dist="row middle spaced" className={cls(styles.container, 'animated fadeIn')}>
-            <ColumnLayout dist="spaced center" className={styles.inputContainer}>
+        <RowLayout dist="row middle spaced" className={cls('container', 'animated fadeIn')}>
+            <ColumnLayout dist="spaced center" className="inputContainer">
                 <h3>Crea un nuevo lienzo!</h3>
                 <Button testId="config-private" icon="lock" color="black" onClick={() => _showConfigurator(true)}>
                     Crea una partida privada
@@ -59,7 +59,7 @@ export default function LandingForms() {
                     Crea una partida publica
                 </Button>
             </ColumnLayout>
-            <ColumnLayout dist="spaced center" className={styles.inputContainer}>
+            <ColumnLayout dist="spaced center" className="inputContainer">
                 <h3>Unete a un lienzo ya creado!</h3>
                 { _renderJoinForm() }
                 <Button icon="search">
@@ -85,7 +85,7 @@ export default function LandingForms() {
     );
 
     return (
-        <RowLayout dist="middle center" className={styles.inputsWrapper}>
+        <RowLayout dist="middle center" className="inputsWrapper">
             {
                 user.loggedIn ? _renderRoomSelectorInputs() : _renderLoginInputs()
             }

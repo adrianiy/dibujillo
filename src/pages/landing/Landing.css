@@ -9,15 +9,14 @@
     display: flex;
     flex: 1;
     width: 100%;
+    min-height: 290px;
     background: #f9f9f9;
     border-top: 1px solid whitesmoke;
     border-bottom: 1px solid whitesmoke;
 }
 .container {
-    width: 35%;
+    width: 680px;
     height: 200px;
-    max-width: 800px;
-    min-width: 400px;
 }
 .inputContainer {
     height: 100%;
@@ -51,4 +50,25 @@
     width: 200px;
     /* top: -200px; */
     margin-top: -295px;
+}
+
+@media only screen and (max-width: 540px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .inputsWrapper {
+        height: auto;
+        min-height: auto;
+    }
+    .inputContainer .button{
+        margin: var(--padding--m) 0;
+    }
+    .inputContainer:first-of-type {
+        border-right: none;
+        border-bottom: 1px solid silver;
+    }
+    .userContainer {
+        margin: 32px 32px 64px 32px;
+    }
 }
