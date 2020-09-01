@@ -8,6 +8,7 @@
         "@testing-library/user-event": "^7.2.1",
         "husky": "^4.2.5",
         "lint-staged": "^10.2.11",
+        "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-google-login": "^5.1.21",
@@ -26,6 +27,12 @@
         "@semantic-release/npm": "^7.0.5",
         "@semantic-release/release-notes-generator": "^9.0.1",
         "@typescript-eslint/parser": "^2.30.0",
+        "eslint": "^6.6.0",
+        "eslint-config-airbnb": "^18.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsx-a11y": "^6.3.1",
+        "eslint-plugin-react": "^7.20.6",
+        "eslint-plugin-react-hooks": "^4.1.0",
         "jest-environment-jsdom-sixteen": "^1.0.3",
         "semantic-release": "^17.0.6"
     },
@@ -33,9 +40,10 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --coverage --watchAll=false --env=jest-environment-jsdom-sixteen --silent",
+        "test:nosilent": "react-scripts test --coverage --watchAll=false --env=jest-environment-jsdom-sixteen",
         "test:nocov": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --silent",
         "eject": "react-scripts eject",
-        "lint": "eslint . --ext js"
+        "lint": "eslint ./src --ext js --fix"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -79,7 +87,6 @@
         "collectCoverageFrom": [
             "src/**/**",
             "!**/pages/room/Room.js",
-            "!**/components/**",
             "!**/index.js",
             "!**/test/**",
             "!**/serviceWorker.js",

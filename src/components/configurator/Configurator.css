@@ -1,0 +1,40 @@
+.configuratorContainer {
+    box-shadow: var(--shadow--small);
+    position: fixed;
+    padding: var(--padding--m);
+    background: var(--bg-color);
+    border-radius: 4px;
+    max-width: calc(100% - var(--padding--xl));
+}
+.header {
+    margin-bottom: var(--padding--m);
+    padding-bottom: var(--padding--xs);
+    border-bottom: var(--border--light);
+}
+.header h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: var(--padding--xxxl);
+    background: var(--gradient-color--light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.header .text {
+    padding: 0;
+}
+.tabsContainer {
+    margin-bottom: var(--padding--m);
+}
+.friendsSection {
+    margin-top: var(--padding--m);
+}
+.configuratorContainer input {
+    padding: var(--padding--s);
+}
+.bottomButtons {
+    margin-top: var(--padding--m);
+}
+.bottomButtons .playButton {
+    margin-left: var(--padding--m);
+}

@@ -3,11 +3,12 @@
     display: flex;
     flex: 1;
     align-items: center;
+    white-space: nowrap;
 }
 .Header h1 {
     margin: 0;
     animation: flow 30s ease-in-out infinite;
-    background: linear-gradient(-60deg, #904e95, #904e05, #e73c7e, #ee7752);
+    background: var(--gradient-color);
     background-size: 300%;
 
     -webkit-background-clip: text;
@@ -28,5 +29,19 @@
 
     100% {
         background-position: 0 50%;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .Header h1 {
+        font-size: 100px;
+    }
+    .Header h1 em {
+        font-size: 100px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .Header h1 span {
+        display: none;
     }
 }

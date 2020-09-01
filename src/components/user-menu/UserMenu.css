@@ -1,5 +1,5 @@
 .UserMenu {
-    backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: var(--backdrop);
     box-shadow: var(--shadow--small);
     padding: var(--padding--m);
 }
