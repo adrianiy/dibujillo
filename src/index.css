@@ -45,6 +45,7 @@ h3 {
 }
 
 :root {
+    --padding--xxxs: 2px;
     --padding--xxs: 4px;
     --padding--xs: 8px;
     --padding--s: 12px;

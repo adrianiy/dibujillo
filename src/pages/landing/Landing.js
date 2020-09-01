@@ -8,7 +8,7 @@ import LandingUser from './components/LandingUser';
 export default function Landing() {
     return (
         <ColumnLayout dist="center spaced" className="landingContainer">
-            <Header className="landingHeader" />
+            <Header />
             <LandingForms />
             <LandingUser />
         </ColumnLayout>
