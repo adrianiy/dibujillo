@@ -5,6 +5,19 @@
     align-items: center;
     white-space: nowrap;
 }
+.HiddenLoginButton {
+    display: none!important;
+}
+.Header .row {
+    flex: 1;
+    padding: var(--padding--xs) var(--padding--m);
+}
+.Header em {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .Header h1 {
     margin: 0;
     animation: flow 30s ease-in-out infinite;

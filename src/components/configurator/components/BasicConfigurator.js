@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ColumnLayout } from '../../../global/Layout';
 
-function BasicPrivateConfiguration({ roomName, updateMatchConfig }) {
+function BasicPrivateConfiguration({ roomHref, updateMatchConfig }) {
     const _renderNameSection = () => (
         <ColumnLayout className="linkSection">
             <h3>Nombre de tu sala</h3>
@@ -10,7 +10,7 @@ function BasicPrivateConfiguration({ roomName, updateMatchConfig }) {
                 data-testid="name"
                 type="text"
                 placeholder="Ponle un nombre a tu sala..."
-                value={roomName}
+                value={roomHref}
                 onChange={(e) => updateMatchConfig({ name: e.target.value })}
             />
         </ColumnLayout>
@@ -39,7 +39,7 @@ function BasicPublicConfiguration() {
 }
 
 BasicPrivateConfiguration.propTypes = {
-    roomName: PropTypes.string.isRequired,
+    roomHref: PropTypes.string.isRequired,
     updateMatchConfig: PropTypes.func.isRequired,
 };
 

@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { ColumnLayout, RowLayout } from '../../global/Layout';
 
 import './Configurator.css';
@@ -30,6 +31,7 @@ const Configurator = ({ privateRoom }, ref) => {
     const [configTab, setConfigTab] = useState(null);
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const updateMatchConfig = useCallback((newConfig) => {
         setMatchConfig((prevConfig) => ({ ...prevConfig, ...newConfig }));
@@ -39,9 +41,14 @@ const Configurator = ({ privateRoom }, ref) => {
         const { href } = window.location;
         const userId = user.name;
         const time = (new Date()).getDate();
-        setRoomId(`${href}?roomId=${btoa(`${userId}${time}`)}`);
-        updateMatchConfig({ name: `${user.name}'s room` });
+        const newRoomId = btoa(`${userId}${time}`);
+        setRoomId(newRoomId);
+        updateMatchConfig({ name: `${user.name}'s room`, href: `${href}?roomId=${newRoomId}` });
     }, [user.name, updateMatchConfig]);
+
+    const _handleStart = () => {
+        history.push(`room/${roomId}`);
+    };
 
     const _toggleAdvancedConfig = () => {
         if (advancedConfig) {
@@ -61,7 +68,7 @@ const Configurator = ({ privateRoom }, ref) => {
 
     const _renderShareSection = () => (
         privateRoom
-            ? <BasicPrivateConfiguration roomName={matchConfig.name} updateMatchConfig={updateMatchConfig} />
+            ? <BasicPrivateConfiguration roomHref={matchConfig.href} updateMatchConfig={updateMatchConfig} />
             : <BasicPublicConfiguration />
     );
 
@@ -153,7 +160,7 @@ const Configurator = ({ privateRoom }, ref) => {
             <Button testId="link-button" className="text" icon="link" color="blue" onClick={_copyLink}>
                 Copiar enlace
             </Button>
-            <Button icon="play_arrow" className="playButton" color="black">
+            <Button icon="play_arrow" className="playButton" color="black" onClick={_handleStart}>
                 Iniciar
             </Button>
         </RowLayout>
