@@ -68,7 +68,7 @@ const Configurator = ({ privateRoom }, ref) => {
 
     const _renderShareSection = () => (
         privateRoom
-            ? <BasicPrivateConfiguration roomHref={matchConfig.href} updateMatchConfig={updateMatchConfig} />
+            ? <BasicPrivateConfiguration roomName={matchConfig.name} updateMatchConfig={updateMatchConfig} />
             : <BasicPublicConfiguration />
     );
 

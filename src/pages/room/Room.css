@@ -1,0 +1,41 @@
+.roomContainer {
+    height: 100vh;
+}
+.roomContainer .Header {
+    z-index: 2;
+}
+.room {
+    flex: 1;
+}
+.rankingContainer {
+    width: 180px;
+    overflow: hidden;
+    background: var(--bg-color--secondary);
+    height: calc(100% - 64px);
+    padding: var(--padding--s) var(--padding--m);
+    transition: all ease-in 300ms;
+}
+.rankingContainer.contracted {
+    width: 34px;
+}
+.userDataContainer {
+    margin-left: var(--padding--m);
+}
+.userName {
+    font-weight: var(--font-weight--bold);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+.closeButton {
+    margin-bottom: var(--padding--s);
+}
+.closeButton h3 {
+    margin-bottom: var(--padding--xxs);
+}
+.closeButton em {
+    cursor: pointer;
+    margin-left: var(--padding--m);
+}
+.rankingContainer.contracted .closeButton em {
+    margin-left: var(--padding--xxs);
+}

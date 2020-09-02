@@ -5,6 +5,10 @@
     align-items: center;
     white-space: nowrap;
 }
+.Header.small {
+    flex: none;
+    box-shadow: var(--shadow--tiny);
+}
 .HiddenLoginButton {
     display: none!important;
 }
@@ -17,6 +21,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.Header.small em {
+    font-size: 34px;
+    cursor: pointer;
 }
 .Header h1 {
     margin: 0;
