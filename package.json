@@ -87,7 +87,6 @@
         ],
         "collectCoverageFrom": [
             "src/**/**",
-            "!**/pages/room/Room.js",
             "!**/index.js",
             "!**/test/**",
             "!**/serviceWorker.js",

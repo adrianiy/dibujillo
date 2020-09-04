@@ -29,7 +29,7 @@ export default function UserMenu({ className }) {
     };
 
     const _renderUserMenu = () => (
-        <ColumnLayout dist="spaced" className={cls('UserMenu', className)}>
+        <ColumnLayout testId="user-menu" dist="spaced" className={cls('UserMenu', className)}>
             <h3>{ user.name }</h3>
             <Button testId="logout-button" className="text red" icon="power_settings_new" onClick={_logout}>
                 Logout

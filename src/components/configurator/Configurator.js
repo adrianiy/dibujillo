@@ -161,7 +161,7 @@ const Configurator = ({ privateRoom }, ref) => {
             <Button testId="link-button" className="text" icon="link" color="blue" onClick={_copyLink}>
                 Copiar enlace
             </Button>
-            <Button icon="play_arrow" className="playButton" color="black" onClick={_handleStart}>
+            <Button icon="play_arrow" className="playButton" color="black" testId="start-button" onClick={_handleStart}>
                 Iniciar
             </Button>
         </RowLayout>

@@ -33,7 +33,12 @@ export default function Room() {
     );
 
     const _toggleRanking = () => (
-        <RowLayout dist="middle spaced" className="closeButton" onClick={() => setRankingVisibility((state) => !state)}>
+        <RowLayout
+            testId="ranking-toggle"
+            dist="middle spaced"
+            className="closeButton"
+            onClick={() => setRankingVisibility((state) => !state)}
+        >
             <h3>Ranking</h3>
             <em className="material-icons">{ rankingVisibility ? 'first_page' : 'last_page' }</em>
         </RowLayout>
@@ -66,7 +71,7 @@ export default function Room() {
     );
 
     return (
-        <ColumnLayout className="roomContainer" dist="start">
+        <ColumnLayout className="roomContainer" dist="start" testId="room">
             <Header size="small" />
             <RowLayout className="room">
                 { _renderRanking() }

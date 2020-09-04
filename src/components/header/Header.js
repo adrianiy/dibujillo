@@ -43,8 +43,8 @@ export default function Header({ size }) {
     const _renderSmallHeader = () => (
         <header className="Header small">
             <RowLayout dist="spaced middle">
-                <em className="material-icons-outlined" onClick={_goHome}>edit</em>
-                <Avatar image={user.imageUrl} name={user.name} size="small" onClick={_toggleVisibility} />
+                <em className="material-icons-outlined" data-testid="home-button" onClick={_goHome}>edit</em>
+                <Avatar testId="menu-button" image={user.imageUrl} name={user.name} size="small" onClick={_toggleVisibility} />
                 { userMenuVisibility ? <UserMenu /> : null }
             </RowLayout>
             <GoogleLogin

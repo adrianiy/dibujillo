@@ -8,6 +8,12 @@ Object.assign(navigator, {
         writeText: () => {},
     },
 });
+const mockFn = jest.fn();
+jest.mock('react-router-dom', () => ({
+    useHistory: () => ({
+        push: mockFn,
+    }),
+}));
 
 describe('Configurator private test suite', () => {
     let rendered;
@@ -120,5 +126,12 @@ describe('Configurator advanced config test suite', () => {
         fireEvent.click(button);
         const element = getByTestId('minigames-section');
         expect(element).toBeDefined();
+    });
+
+    test('start game test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('start-button');
+        fireEvent.click(button);
+        expect(mockFn).toHaveBeenCalled();
     });
 });
