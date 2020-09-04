@@ -47,6 +47,7 @@ const Configurator = ({ privateRoom }, ref) => {
     }, [user.name, updateMatchConfig]);
 
     const _handleStart = () => {
+        localStorage.setItem('roomConfig', JSON.stringify(matchConfig));
         history.push(`room/${roomId}`);
     };
 

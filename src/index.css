@@ -35,7 +35,7 @@ h3 {
     --gradient-color--light: linear-gradient(-60deg, #e73c7e, #ee7752);
     --gradient-color--contrast: white;
     --bg-color: white;
-    --bg-color--secondary: white;
+    --bg-color--secondary: #fdfdfd;
     --text-color: rgba(0,0,0,.8);
     --text-color--light: rgba(0,0,0,.35);
 }

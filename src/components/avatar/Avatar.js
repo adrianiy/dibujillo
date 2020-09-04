@@ -4,10 +4,10 @@ import './Avatar.css';
 import cls from '../../global/utils';
 
 export default function Avatar({
-    image, title, size, onClick,
+    image, gradient, title, size, onClick,
 }) {
     return (
-        <div className={cls('AvatarContainer', size)} title={title} onClick={onClick}>
+        <div className={cls('AvatarContainer', size, gradient ? 'gradient' : '')} title={title} onClick={onClick}>
             <div className="Avatar">
                 <img data-testid="image" src={image} alt="avatar" />
             </div>
@@ -17,6 +17,7 @@ export default function Avatar({
 
 Avatar.propTypes = {
     image: PropTypes.string.isRequired,
+    gradient: PropTypes.bool,
     title: PropTypes.string,
     size: PropTypes.string,
     onClick: PropTypes.func,
@@ -24,6 +25,7 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
     title: '',
+    gradient: true,
     size: 'big',
     onClick: null,
 };

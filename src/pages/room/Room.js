@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { ColumnLayout, RowLayout } from '../../global/Layout';
 import Header from '../../components/header/Header';
@@ -6,14 +6,21 @@ import Avatar from '../../components/avatar/Avatar';
 
 import './Room.css';
 import cls from '../../global/utils';
+import Button from '../../components/button/Button';
 
 export default function Room() {
     const [rankingVisibility, setRankingVisibility] = useState(true);
+    const [matchConfig, setMatchConfig] = useState({});
     const user = useSelector((state) => state.user);
+
+    useEffect(() => {
+        const config = localStorage.getItem('roomConfig');
+        setMatchConfig(JSON.parse(config));
+    }, [setMatchConfig]);
 
     const _renderRankingItem = () => (
         <RowLayout>
-            <Avatar size="small" image={user.imageUrl} name={user.name} />
+            <Avatar size="small" gradient={false} image={user.imageUrl} name={user.name} />
             <ColumnLayout className="userDataContainer" dist="middle">
                 <span className="userName">
                     { user.name }
@@ -27,7 +34,7 @@ export default function Room() {
 
     const _toggleRanking = () => (
         <RowLayout dist="middle spaced" className="closeButton" onClick={() => setRankingVisibility((state) => !state)}>
-            { rankingVisibility ? <h3>Ranking</h3> : null }
+            <h3>Ranking</h3>
             <em className="material-icons">{ rankingVisibility ? 'first_page' : 'last_page' }</em>
         </RowLayout>
     );
@@ -39,11 +46,31 @@ export default function Room() {
         </ColumnLayout>
     );
 
+    const _renderContent = () => (
+        <ColumnLayout className="content">
+            <RowLayout>
+                <h2>{ matchConfig.name }</h2>
+                <Button className="text shareLink" color="blue">
+                    Compartir
+                </Button>
+            </RowLayout>
+            <RowLayout className="tilesContainer">
+                <div className="drawer">
+                    DRAWER
+                </div>
+                <div className="chat">
+                    CHAT
+                </div>
+            </RowLayout>
+        </ColumnLayout>
+    );
+
     return (
         <ColumnLayout className="roomContainer" dist="start">
             <Header size="small" />
             <RowLayout className="room">
                 { _renderRanking() }
+                { _renderContent() }
             </RowLayout>
         </ColumnLayout>
     );

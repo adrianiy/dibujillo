@@ -9,22 +9,37 @@
 }
 .rankingContainer {
     width: 180px;
-    overflow: hidden;
     background: var(--bg-color--secondary);
-    height: calc(100% - 64px);
+    height: calc(100% - 24px);
     padding: var(--padding--s) var(--padding--m);
     transition: all ease-in 300ms;
+    border-right: 1px solid whitesmoke;
 }
 .rankingContainer.contracted {
     width: 34px;
 }
+.rankingContainer h3 {
+    transition: all ease-in 300ms;
+    width: 59px;
+}
+.rankingContainer.contracted h3 {
+    width: 0;
+    overflow: hidden;
+}
 .userDataContainer {
     margin-left: var(--padding--m);
+    overflow: hidden;
 }
 .userName {
     font-weight: var(--font-weight--bold);
     white-space: nowrap;
     text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.userPoints {
+    white-space: nowrap;
 }
 .closeButton {
     margin-bottom: var(--padding--s);
@@ -35,7 +50,38 @@
 .closeButton em {
     cursor: pointer;
     margin-left: var(--padding--m);
+    background: var(--bg-color--secondary);
+    z-index: 2;
 }
 .rankingContainer.contracted .closeButton em {
+    margin-right: 6px;
     margin-left: var(--padding--xxs);
+}
+.content {
+    padding: var(--padding--l);
+    width: 100%;
+    height: calc(100% - 64px);
+}
+.content h2 {
+    margin-top: 0;
+}
+.tilesContainer {
+    height: 100%;
+}
+.shareLink {
+    font-weight: var(--font-weight--bold)!important;
+    margin-bottom: var(--padding--s);
+    margin-left: var(--padding--m);
+}
+.drawer {
+    border: var(--border);
+    flex: 1;
+    margin-right: var(--padding--s);
+    height: 100%;
+}
+.chat {
+    border: var(--border);
+    flex: 1;
+    margin-left: var(--padding--s);
+    height: 100%;
 }
