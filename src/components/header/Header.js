@@ -35,7 +35,7 @@ export default function Header({ size }) {
             <h1>
                 <span>Dibujillo</span>
                 .
-                <em className="material-icons-outlined">edit</em>
+                <em className="material-icons-outlined logo">edit</em>
             </h1>
         </header>
     );
@@ -43,9 +43,10 @@ export default function Header({ size }) {
     const _renderSmallHeader = () => (
         <header className="Header small">
             <RowLayout dist="spaced middle">
-                <em className="material-icons-outlined" data-testid="home-button" onClick={_goHome}>edit</em>
+                <em className="material-icons-outlined logo" data-testid="home-button" onClick={_goHome}>edit</em>
                 <Avatar testId="menu-button" image={user.imageUrl} name={user.name} size="small" onClick={_toggleVisibility} />
-                { userMenuVisibility ? <UserMenu /> : null }
+                { userMenuVisibility
+                    ? <UserMenu className="topBarMenu" closeCallback={() => setUserMenuVisibility(false)} /> : null }
             </RowLayout>
             <GoogleLogin
                 className="HiddenLoginButton"

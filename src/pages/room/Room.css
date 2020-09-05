@@ -70,18 +70,23 @@
 }
 .shareLink {
     font-weight: var(--font-weight--bold)!important;
-    margin-bottom: var(--padding--s);
+    margin-bottom: var(--padding--xs);
     margin-left: var(--padding--m);
+    padding: 0!important
 }
 .drawer {
     border: var(--border);
+    border-radius: 4px;
     flex: 1;
     margin-right: var(--padding--s);
-    height: 100%;
+    padding: var(--padding--m);
+    height: calc(100% - 48px);
 }
 .chat {
     border: var(--border);
+    border-radius: 4px;
     flex: 1;
     margin-left: var(--padding--s);
-    height: 100%;
+    padding: var(--padding--m);
+    height: calc(100% - 48px);
 }

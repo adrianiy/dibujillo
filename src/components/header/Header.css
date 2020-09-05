@@ -16,13 +16,13 @@
     flex: 1;
     padding: var(--padding--xs) var(--padding--m);
 }
-.Header em {
+.Header .logo {
     background: var(--gradient-color);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.Header.small em {
+.Header.small .logo {
     font-size: 34px;
     cursor: pointer;
 }
@@ -36,8 +36,13 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.Header h1 em {
+.Header h1 .logo {
     font-size: var(--font-size--xxxl);
+}
+.Header .topBarMenu {
+    position: fixed;
+    top: 44px;
+    right: var(--padding--m);
 }
 @keyframes flow {
     0% {
