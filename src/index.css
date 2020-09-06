@@ -35,6 +35,7 @@ h3 {
     --gradient-color--light: linear-gradient(-60deg, #e73c7e, #ee7752);
     --gradient-color--contrast: white;
     --bg-color: white;
+    --bg-color--secondary: #fdfdfd;
     --text-color: rgba(0,0,0,.8);
     --text-color--light: rgba(0,0,0,.35);
 }
@@ -45,6 +46,7 @@ h3 {
 }
 
 :root {
+    --padding--xxxs: 2px;
     --padding--xxs: 4px;
     --padding--xs: 8px;
     --padding--s: 12px;
@@ -77,6 +79,7 @@ h3 {
 
 :root {
     --shadow--small: 0 5px 10px rgba(0,0,0,0.12);
+    --shadow--tiny: 0 0px 5px rgba(0,0,0,0.05);
 }
 
 :root {

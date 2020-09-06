@@ -5,6 +5,27 @@
     align-items: center;
     white-space: nowrap;
 }
+.Header.small {
+    flex: none;
+    box-shadow: var(--shadow--tiny);
+}
+.HiddenLoginButton {
+    display: none!important;
+}
+.Header .row {
+    flex: 1;
+    padding: var(--padding--xs) var(--padding--m);
+}
+.Header .logo {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Header.small .logo {
+    font-size: 34px;
+    cursor: pointer;
+}
 .Header h1 {
     margin: 0;
     animation: flow 30s ease-in-out infinite;
@@ -15,8 +36,13 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.Header h1 em {
+.Header h1 .logo {
     font-size: var(--font-size--xxxl);
+}
+.Header .topBarMenu {
+    position: fixed;
+    top: 44px;
+    right: var(--padding--m);
 }
 @keyframes flow {
     0% {

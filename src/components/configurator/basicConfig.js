@@ -1,5 +1,6 @@
 const matchConfiguration = {
     name: '',
+    href: '',
     type: 'private',
     players: 0,
     onlyFriends: true,

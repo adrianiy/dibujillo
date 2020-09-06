@@ -1,23 +1,31 @@
 .AvatarContainer {
-    background: linear-gradient(-60deg, #904e05, #e73c7e, #ee7752);
     padding: var(--padding--xxs);
     border-radius: 100%;
+}
+.AvatarContainer.gradient {
+    background: linear-gradient(-60deg, #904e05, #e73c7e, #ee7752);
 }
 .Avatar {
     border-radius: 100%;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
     cursor: pointer;
 }
 .Avatar img {
-    width: 100%;
+    border-radius: 100%;
     height: 100%;
+    width: 100%;
 }
 
-.Avatar.big {
-    height: 200px;
+.AvatarContainer.big {
+    height: 90px;
+    width: 90px;
 }
-.Avatar.small {
-    height: 50px;
+.AvatarContainer.small {
+    height: 30px;
+    width: 30px;
+    padding: var(--padding--xxxs);
+}
+.AvatarContainer.small img {
+    width: 30px;
+    height: 30px;
 }
