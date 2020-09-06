@@ -1,11 +1,10 @@
 [![Build & Test][build-badge]][build-link]
 [![Github license][license-image]][repo-link]
 [![Version][version-image]][repo-version-link]
-[![codecov][codevoc-badge]][codecov-link]
+[![codecov][codecov-badge]][codecov-link]
 
 <div align="center">
-  <img width="400" height="200"
-    src="./assets/screenshot.PNG">
+  <img src="./assets/screenshot.PNG">
 </div>
 
 
