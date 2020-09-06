@@ -5,10 +5,12 @@
     font-weight: var(--font-weight--normal);
     cursor: pointer;
     transition: all ease-in-out 300ms;
+    white-space: nowrap;
 }
 
 .button em {
     margin-right: var(--padding--xs);
+    font-size: 21px;
 }
 
 .button.black {
@@ -17,6 +19,10 @@
 }
 .button.red {
     color: red;
+}
+.button.blue {
+    color: #18a0fb;
+    font-weight: var(--font-weight--lighter);
 }
 .button:hover {
     border-color: rgba(0, 0, 0, .2);

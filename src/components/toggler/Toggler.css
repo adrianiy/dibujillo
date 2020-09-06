@@ -1,0 +1,29 @@
+.togglerContainer {
+    width: 50px;
+    height: 25px;
+    background: silver;
+    border-radius: 4px;
+    border: var(--border--light);
+    cursor: pointer;
+}
+.togglerContainer.active {
+    background: var(--gradient-color--light);
+}
+.toggler {
+    background: white;
+    height: 23px;
+    width: 25px;
+    border-radius: 2px;
+    transition: all ease-in 100ms;
+    transform: translateX(1px);
+}
+.toggler.active {
+    transform: translateX(24px);
+}
+.toggler .verticalLine {
+    height: 17px;
+    border-right: var(--border--light);
+}
+.toggler .verticalLine:nth-child(2) {
+    margin: 0 var(--padding--xxs);
+}

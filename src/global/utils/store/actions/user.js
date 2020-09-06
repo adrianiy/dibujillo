@@ -1,19 +1,15 @@
-const { SET_USER, LOGOUT } = require("../reducers/user")
+import { SET_USER, LOGOUT } from '../reducers/user';
 
-const setUser = userData => {
-    return {
-        type: SET_USER,
-        userData
-    }
-}
+const setUser = (userData) => ({
+    type: SET_USER,
+    userData,
+});
 
-const logout = () => {
-    return {
-        type: LOGOUT
-    }
-}
+const logout = () => ({
+    type: LOGOUT,
+});
 
 export default {
     setUser,
-    logout
-}
+    logout,
+};

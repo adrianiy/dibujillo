@@ -1,28 +1,63 @@
-import React from 'react';
-import { cls } from "./utils";
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-unresolved
+import cls from './utils';
 
-export function RowLayout(props) {
-    return (
-        <div
-            data-testid={props['data-testid']}
-            className={cls( 'row', props.dist, props.className )}
-            style={props.style}
-            onClick={props.onClick}
-        >
-            { props.children }
-        </div>
-    )
-}
+const RowLayoutFunc = ({
+    testId, dist, className, style, onClick, children,
+}, ref) => (
+    <div
+        ref={ref}
+        data-testid={testId}
+        className={cls('row', dist, className)}
+        style={style}
+        onClick={onClick}
+    >
+        { children }
+    </div>
+);
 
-export function ColumnLayout(props) {
-    return (
-        <div
-            data-testid={props["data-testid"]}
-            className={cls("column", props.dist, props.className)}
-            style={props.style}
-            onClick={props.onClick}
-        >
-            {props.children}
-        </div>
-    );
-}
+const ColumnLayoutFunc = ({
+    testId, dist, className, style, onClick, children,
+}, ref) => (
+    <div
+        ref={ref}
+        data-testid={testId}
+        className={cls('column', dist, className)}
+        style={style}
+        onClick={onClick}
+    >
+        {children}
+    </div>
+);
+
+const propTypes = {
+    testId: PropTypes.string,
+    dist: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.objectOf(PropTypes.object),
+    onClick: PropTypes.func,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
+};
+
+const defaultProps = {
+    testId: '',
+    dist: '',
+    className: '',
+    style: {},
+    onClick: null,
+    children: null,
+};
+
+RowLayoutFunc.propTypes = propTypes;
+ColumnLayoutFunc.propTypes = propTypes;
+RowLayoutFunc.defaultProps = defaultProps;
+ColumnLayoutFunc.defaultProps = defaultProps;
+
+export const ColumnLayout = forwardRef(ColumnLayoutFunc);
+export const RowLayout = forwardRef(RowLayoutFunc);

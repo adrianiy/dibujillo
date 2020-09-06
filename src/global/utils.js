@@ -1,1 +1,3 @@
-export const cls = (...classNames) => classNames.join(' ');
+const cls = (...classNames) => classNames.join(' ');
+
+export default cls;

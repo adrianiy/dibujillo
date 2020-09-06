@@ -1,17 +1,17 @@
 import React from 'react';
-import { getMockProvider } from '../../../global/utils/test/store.mock';
-import LandingUser from './LandingUser';
 import { fireEvent } from '@testing-library/react';
+import getMockProvider from '../../../global/utils/test/store.mock';
+import LandingUser from './LandingUser';
 
-const user = { name: 'test' }
+const user = { name: 'test' };
 
 describe('Landing logged test suite', () => {
     let rendered;
 
     beforeEach(() => {
-         ({ rendered } = getMockProvider(<LandingUser/>, {
-             user: { loggedIn: true, ...user },
-         }));
+        ({ rendered } = getMockProvider(<LandingUser />, {
+            user: { loggedIn: true, ...user },
+        }));
     });
 
     test('element is present test', () => {
@@ -33,9 +33,9 @@ describe('Landing not logged test suite', () => {
     let rendered;
 
     beforeEach(() => {
-         ({ rendered } = getMockProvider(<LandingUser/>, {
-             user: { loggedIn: false },
-         }));
+        ({ rendered } = getMockProvider(<LandingUser />, {
+            user: { loggedIn: false },
+        }));
     });
 
     test('element is not present test', () => {
