@@ -3,14 +3,13 @@
 [![Version][version-image]][repo-version-link]
 [![codecov][codevoc-badge]][codecov-link]
 
+<div align="center">
+  <img width="400" height="200"
+    src="./assets/screenshot.PNG">
+</div>
 
 
 # Dibujillo
-
-<div align="center">
-  <img width="200" height="200"
-    src="./assets/screenshot.PNG">
-</div>
 
 This project was created to offer some fun to our friends!
 
@@ -39,7 +38,7 @@ Features list:
 [Contributing][contrib-link]
 
 [build-badge]: https://github.com/AdrianInsua/dibujillo/workflows/Build%20&%20Test/badge.svg
-[build-link] https://github.com/AdrianInsua/dibujillo/actions?query=workflow%3A%22Build+%26+Test%22
+[build-link]: https://github.com/AdrianInsua/dibujillo/actions?query=workflow%3A%22Build+%26+Test%22
 [license-image]: https://badgen.net/github/license/AdrianInsua/dibujillo
 [repo-link]: https://github.com/AdrianInsua/dibujillo
 [version-image]: https://badgen.net/github/release/AdrianInsua/dibujillo/stable
