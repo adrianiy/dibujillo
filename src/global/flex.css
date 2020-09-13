@@ -16,6 +16,9 @@
 .row.spaced{
     justify-content: space-between;
 }
+.row.around {
+    justify-content: space-around;
+}
 .row.center {
     justify-content: center;
 }
@@ -48,6 +51,9 @@
 }
 .column.spaced {
     justify-content: space-between;
+}
+.column.around {
+    justify-content: space-around;
 }
 .column.left {
     align-items: flex-start;

@@ -11,8 +11,8 @@ import '../Landing.css';
 import useClickAwayEffect from '../../../global/effects/ClickAwayEffect';
 
 export default function LandingForms() {
-    const [roomId, setRoomId] = useState('');
     const [showConfigurator, setShowConfigurator] = useState(0);
+    const [activeTab, setActiveTab] = useState(0);
     const user = useSelector((state) => state.user);
     const configRef = useRef(null);
     const dispatch = useDispatch();
@@ -27,19 +27,6 @@ export default function LandingForms() {
         }
     };
 
-    const _renderJoinForm = () => (
-        <form>
-            <input
-                className="input"
-                data-testid="room-id"
-                type="text"
-                placeholder="#IdLienzo"
-                value={roomId}
-                onChange={(e) => setRoomId(e.target.value)}
-            />
-        </form>
-    );
-
     const _showConfigurator = (privateRoom) => {
         if (privateRoom) {
             setShowConfigurator(1);
@@ -48,25 +35,64 @@ export default function LandingForms() {
         }
     };
 
-    const _renderRoomSelectorInputs = () => (
-        <RowLayout dist="row middle spaced" className={cls('container', 'animated fadeIn')}>
-            <ColumnLayout dist="spaced center" className="inputContainer">
-                <h3>Crea un nuevo lienzo!</h3>
-                <Button testId="config-private" icon="lock" color="black" onClick={() => _showConfigurator(true)}>
-                    Crea una partida privada
-                </Button>
-                <Button testId="config-public" icon="public" color="black" onClick={() => _showConfigurator(false)}>
-                    Crea una partida publica
-                </Button>
-            </ColumnLayout>
-            <ColumnLayout dist="spaced center" className="inputContainer">
-                <h3>Unete a un lienzo ya creado!</h3>
-                { _renderJoinForm() }
-                <Button icon="search">
-                    Busca una partida publica
-                </Button>
-            </ColumnLayout>
+    const _changeTab = (tab) => {
+        setActiveTab(tab);
+    };
+
+    const _renderPrivateForm = () => (
+        <ColumnLayout dist="center around" className="matchButtonContainer">
+            <Button testId="config-private" icon="lock" className="center" color="black" onClick={() => _showConfigurator(true)}>
+                Crea una partida privada
+            </Button>
+            <Button testId="join-private" icon="play_arrow" className="center">
+                Unirse a una partida
+            </Button>
+        </ColumnLayout>
+    );
+
+    const _renderPublicForm = () => (
+        <ColumnLayout dist="center around" className="matchButtonContainer">
+            <Button
+                testId="config-public"
+                icon="public"
+                color="black"
+                className="center"
+                onClick={() => _showConfigurator(false)}
+            >
+                Crea una partida pública
+            </Button>
+            <Button testId="join-private" className="center" icon="play_arrow">
+                Unirse a una partida
+            </Button>
+        </ColumnLayout>
+    );
+
+    const _renderTabs = () => (
+        <RowLayout>
+            <div
+                data-testid="priv-tab"
+                className={`gameTab ${!activeTab ? 'active' : ''}`}
+                onClick={() => _changeTab(0)}
+            >
+                Privada
+
+            </div>
+            <div
+                data-testid="pub-tab"
+                className={`gameTab ${activeTab ? 'active' : ''}`}
+                onClick={() => _changeTab(1)}
+            >
+                Pública
+
+            </div>
         </RowLayout>
+    );
+
+    const _renderRoomSelectorInputs = () => (
+        <ColumnLayout dist="center spaced" className={cls('container', 'animated fadeIn')}>
+            {_renderTabs()}
+            {!activeTab ? _renderPrivateForm() : _renderPublicForm()}
+        </ColumnLayout>
     );
 
     const _renderLoginInputs = () => (
@@ -81,7 +107,14 @@ export default function LandingForms() {
     );
 
     const _renderConfigurator = () => (
-        <Configurator ref={configRef} privateRoom={showConfigurator === 1} />
+        <Configurator
+            ref={configRef}
+            privateRoom={showConfigurator === 1}
+            closeCallback={
+            /* istanbul ignore next func */
+                () => setShowConfigurator(0)
+            }
+        />
     );
 
     return (

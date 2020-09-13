@@ -37,12 +37,14 @@ h3 {
     --bg-color: white;
     --bg-color--secondary: #fdfdfd;
     --text-color: rgba(0,0,0,.8);
+    --text-color--medium: rgba(0,0,0,0.5);
     --text-color--light: rgba(0,0,0,.35);
 }
 
 :root {
     --border: 1px solid #d6d2d2;
     --border--light: 1px solid #f3f3f3;
+    --border--dark: 1px solid rgba(0,0,0,.9);
 }
 
 :root {

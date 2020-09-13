@@ -12,8 +12,8 @@ describe('Landing test suite', () => {
     });
 
     test('renders Landing test', () => {
-        const { getByText } = rendered;
-        const inputTitleElement = getByText(/Crea un nuevo lienzo!/i);
+        const { getByTestId } = rendered;
+        const inputTitleElement = getByTestId('priv-tab');
         expect(inputTitleElement).toBeInTheDocument();
     });
 });

@@ -17,10 +17,11 @@ jest.mock('react-router-dom', () => ({
 
 describe('Configurator private test suite', () => {
     let rendered;
+    const closeCallback = jest.fn();
     jest.spyOn(navigator.clipboard, 'writeText');
 
     beforeEach(() => {
-        ({ rendered } = getMockProvider(<Configurator privateRoom />, {
+        ({ rendered } = getMockProvider(<Configurator privateRoom closeCallback={closeCallback} />, {
             user: { loggedIn: true, name: 'test' },
         }));
     });
@@ -36,6 +37,13 @@ describe('Configurator private test suite', () => {
         const button = getByTestId('link-button');
         fireEvent.click(button);
         expect(navigator.clipboard.writeText).toHaveBeenCalled();
+    });
+
+    test('close config test', () => {
+        const { getByTestId } = rendered;
+        const button = getByTestId('close-button');
+        fireEvent.click(button);
+        expect(closeCallback).toHaveBeenCalled();
     });
 });
 

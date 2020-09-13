@@ -21,7 +21,7 @@ export default function Button({
     return (
         <RowLayout
             testId={testId}
-            dist="middle space-between"
+            dist="middle"
             className={cls('button', color, className)}
             onClick={onClick}
         >

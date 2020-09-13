@@ -41,19 +41,19 @@
 .userPoints {
     white-space: nowrap;
 }
-.closeButton {
+.collapseButton {
     margin-bottom: var(--padding--s);
 }
-.closeButton h3 {
+.collapseButton h3 {
     margin-bottom: var(--padding--xxs);
 }
-.closeButton em {
+.collapseButton em {
     cursor: pointer;
     margin-left: var(--padding--m);
     background: var(--bg-color--secondary);
     z-index: 2;
 }
-.rankingContainer.contracted .closeButton em {
+.rankingContainer.contracted .collapseButton em {
     margin-right: 6px;
     margin-left: var(--padding--xxs);
 }

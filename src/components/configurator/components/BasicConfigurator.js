@@ -13,6 +13,7 @@ function BasicPrivateConfiguration({ roomName, updateMatchConfig }) {
                 value={roomName}
                 onChange={(e) => updateMatchConfig({ name: e.target.value })}
             />
+            <span className="caption">Tus amig@s podrán buscar la sala utilizando este nombre.</span>
         </ColumnLayout>
     );
 
@@ -20,7 +21,7 @@ function BasicPrivateConfiguration({ roomName, updateMatchConfig }) {
         <ColumnLayout className="friendsSection">
             <h3>Invita a amigos a tu sala privada!</h3>
             <input type="text" disabled placeholder="Invita a alguien..." />
-            <span className="caption">La invitación se enviará al iniciar la partida</span>
+            <span className="caption">La invitación se enviará al iniciar la partida.</span>
         </ColumnLayout>
     );
 

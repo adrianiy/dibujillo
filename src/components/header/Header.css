@@ -28,7 +28,6 @@
 }
 .Header h1 {
     margin: 0;
-    animation: flow 30s ease-in-out infinite;
     background: var(--gradient-color);
     background-size: 300%;
 
@@ -43,19 +42,6 @@
     position: fixed;
     top: 44px;
     right: var(--padding--m);
-}
-@keyframes flow {
-    0% {
-        background-position: 0 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0 50%;
-    }
 }
 
 @media only screen and (max-width: 740px) {
