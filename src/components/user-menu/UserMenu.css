@@ -1,14 +1,27 @@
-.UserMenu {
+.menuContainer {
     backdrop-filter: var(--backdrop);
+    background: var(--bg-color--translucid);
     box-shadow: var(--shadow--small);
-    padding: var(--padding--m);
+    padding: var(--padding--m) 0;
 }
-.UserMenu h3 {
+.menuContainer h3 {
     text-transform: uppercase;
     cursor: default;
-    font-size: var(--font-size--s);
+    padding: 0 var(--padding--m) var(--padding--m);
+    font-size: var(--font-size--m);
+    border-bottom: var(--border);
 }
-.UserMenu em {
+.menuContainer h3 em {
+    cursor: pointer;
+    margin-right: var(--padding--xs)
+}
+.menuContainer em {
     font-size: var(--font-size--xl);
+}
+.menuContainer .button, .menuContainer .theme {
+    padding: var(--padding--s) var(--padding--m);
+}
+.menuContainer .button:hover {
+    background: var(--bg-color--secondary);
 }
 

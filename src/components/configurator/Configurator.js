@@ -1,5 +1,5 @@
 import React, {
-    useEffect, useState, forwardRef, useCallback,
+    useEffect, useState, useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -24,7 +24,7 @@ const TABS = {
     MINIGAMES: 4,
 };
 
-const Configurator = ({ privateRoom, closeCallback }, ref) => {
+const Configurator = ({ privateRoom, closeCallback }) => {
     const [roomId, setRoomId] = useState(null);
     const [matchConfig, setMatchConfig] = useState(matchConfiguration);
     const [advancedConfig, setAdvancedConfig] = useState(false);
@@ -173,7 +173,7 @@ const Configurator = ({ privateRoom, closeCallback }, ref) => {
     );
 
     return (
-        <RowLayout ref={ref} testId="configurator" className="configuratorContainer">
+        <RowLayout testId="configurator" className="configuratorContainer">
             <ColumnLayout>
                 { _renderHeader() }
                 { _renderTabs() }
@@ -189,4 +189,4 @@ Configurator.propTypes = {
     closeCallback: PropTypes.func.isRequired,
 };
 
-export default forwardRef(Configurator);
+export default Configurator;

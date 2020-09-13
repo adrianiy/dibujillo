@@ -19,7 +19,7 @@
 }
 
 .tabItem.active em {
-    background: var(--gradient-color--light);
+    background: var(--active-color);
     color: var(--gradient-color--contrast);
 }
 

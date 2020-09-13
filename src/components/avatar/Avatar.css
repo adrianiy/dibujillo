@@ -3,7 +3,7 @@
     border-radius: 100%;
 }
 .AvatarContainer.gradient {
-    background: linear-gradient(-60deg, #904e05, #e73c7e, #ee7752);
+    background: var(--gradient-color--light);
 }
 .Avatar {
     border-radius: 100%;

@@ -8,6 +8,9 @@ const toExport = {
     presets: [
         '@babel/preset-react',
         '@babel/preset-env',
+        {
+            useBuiIns: 'entry',
+        },
     ],
 };
 

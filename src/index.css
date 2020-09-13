@@ -30,23 +30,49 @@ h3 {
     padding-top: var(--padding--xxs);
 }
 
-:root {
+.light {
     --gradient-color: linear-gradient(-60deg, #904e95, #904e05, #e73c7e, #ee7752);
     --gradient-color--light: linear-gradient(-60deg, #e73c7e, #ee7752);
     --gradient-color--contrast: white;
     --bg-color: white;
-    --bg-color--secondary: #fdfdfd;
+    --bg-color--secondary: #f9f9f9;
+    --bg-color--third: #fdfdfd;
+    --bg-color--translucid: rgba(255, 255, 255, .8);
+    --bg-color--contrast: black;
+    --active-color: var(--gradient-color--light);
     --text-color: rgba(0,0,0,.8);
+    --text-color--secondary: var(--text-color);
     --text-color--medium: rgba(0,0,0,0.5);
     --text-color--light: rgba(0,0,0,.35);
+    --text-color--contrast: rgba(255,255,255,1);
 }
 
-:root {
+.dark {
+    --gradient-color: linear-gradient(-60deg, #2e8fe2, #fcd2ff, #d886ec, #18a0fb);
+    --gradient-color--light: white;
+    --gradient-color: linear-gradient(-60deg, #2e8fe2, #fcd2ff, #d886ec, #18a0fb);
+    --bg-color: #181818;
+    --bg-color--secondary: #202020;
+    --bg-color--third: white;
+    --bg-color--translucid: #181818d6;
+    --bg-color--contrast: white;
+    --active-color: #27ae60;
+    --text-color: rgba(255,255,255,.9);
+    --text-color--secondary: rgba(0, 0, 0, .8);
+    --text-color--contrast: rgba(0,0,0,.8);
+}
+
+.light {
     --border: 1px solid #d6d2d2;
     --border--light: 1px solid #f3f3f3;
     --border--dark: 1px solid rgba(0,0,0,.9);
 }
 
+.dark {
+    --border: 1px solid white;
+    --border--light: 1px solid #56565685;
+    --border--dark: 1px solid #656565;
+}
 :root {
     --padding--xxxs: 2px;
     --padding--xxs: 4px;
