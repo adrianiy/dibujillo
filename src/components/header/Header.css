@@ -59,7 +59,10 @@
     }
 }
 @media only screen and (max-width: 540px) {
-    .Header h1 span {
+    .Header h1 {
         display: none;
+    }
+    .Header .logo {
+        margin-right: 0;
     }
 }

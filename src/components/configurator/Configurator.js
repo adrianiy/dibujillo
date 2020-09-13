@@ -174,7 +174,7 @@ const Configurator = ({ privateRoom, closeCallback }) => {
 
     return (
         <RowLayout testId="configurator" className="configuratorContainer">
-            <ColumnLayout>
+            <ColumnLayout dist="fl-1">
                 { _renderHeader() }
                 { _renderTabs() }
                 { _renderConfig() }

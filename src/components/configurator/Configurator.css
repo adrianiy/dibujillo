@@ -4,6 +4,7 @@
     padding: var(--padding--m);
     background: var(--bg-color);
     border-radius: 4px;
+    min-width: 300px;
     max-width: calc(100% - var(--padding--xl));
 }
 .header {
@@ -37,4 +38,27 @@
 }
 .bottomButtons .playButton {
     margin-left: var(--padding--m);
+}
+
+@media only screen and (max-width: 540px) {
+    .configuratorContainer {
+        background: var(--bg-color--secondary);
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header h2 {
+        white-space: nowrap;
+        margin-right: 0;
+        margin-bottom: var(--padding--s);
+    }
+    .Header .logo {
+        margin-right: 0;
+    }
+    .bottomButtons {
+        flex-direction: column;
+    }
+    .bottomButtons .button.blue {
+        margin-bottom: var(--padding--s);
+    }
 }
