@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/AdrianInsua/dibujillo/compare/v1.1.0...v1.2.0) (2020-09-13)
+
+
+### Features
+
+* **landing:** simplify landing screen design ([#30](https://github.com/AdrianInsua/dibujillo/issues/30)) ([09fd072](https://github.com/AdrianInsua/dibujillo/commit/09fd072957dac43f719cea93ee9d7fac420244ab))
+
 # [1.1.0](https://github.com/AdrianInsua/dibujillo/compare/v1.0.2...v1.1.0) (2020-09-06)
 
 
