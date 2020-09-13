@@ -1,6 +1,6 @@
 .button {
     padding: var(--padding--xs) var(--padding--m);
-    border: 1px solid black;
+    border: var(--border--dark);
     border-radius: 4px;
     font-weight: var(--font-weight--normal);
     cursor: pointer;
@@ -14,8 +14,8 @@
 }
 
 .button.black {
-    background: black;
-    color: white;
+    background: vaR(--bg-color--contrast);
+    color: var(--text-color--contrast);
 }
 .button.red {
     color: red;
@@ -25,13 +25,13 @@
     font-weight: var(--font-weight--lighter);
 }
 .button:hover {
-    border-color: rgba(0, 0, 0, .2);
+    border-color: var(--border--light);
 }
 .button.black:hover {
-    border-color: black;
+    border-color: var(--bg-color--contrast);
     border-width: 1px;
     background: transparent;
-    color: black;
+    color: var(--text-color);
 }
 .button.text {
     border: none;

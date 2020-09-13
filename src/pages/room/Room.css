@@ -13,7 +13,7 @@
     height: calc(100% - 24px);
     padding: var(--padding--s) var(--padding--m);
     transition: all ease-in 300ms;
-    border-right: 1px solid whitesmoke;
+    border-right: var(--border--light);
 }
 .rankingContainer.contracted {
     width: 34px;
@@ -49,13 +49,15 @@
 }
 .collapseButton em {
     cursor: pointer;
-    margin-left: var(--padding--m);
+    margin-right: -24px;
+    padding-right: var(--padding--m);
     background: var(--bg-color--secondary);
     z-index: 2;
+    transition: all ease-in 300ms;
 }
 .rankingContainer.contracted .collapseButton em {
-    margin-right: 6px;
-    margin-left: var(--padding--xxs);
+    margin-right: 4px;
+    margin-left: 7px;
 }
 .content {
     padding: var(--padding--l);
@@ -75,7 +77,9 @@
     padding: 0!important
 }
 .drawer {
-    border: var(--border);
+    border: var(--border--light);
+    background: var(--bg-color--third);
+    color: var(--text-color--secondary);
     border-radius: 4px;
     flex: 1;
     margin-right: var(--padding--s);
@@ -83,7 +87,9 @@
     height: calc(100% - 48px);
 }
 .chat {
-    border: var(--border);
+    border: var(--border--light);
+    background: var(--bg-color--third);
+    color: var(--text-color--secondary);
     border-radius: 4px;
     flex: 1;
     margin-left: var(--padding--s);
