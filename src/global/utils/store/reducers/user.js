@@ -18,6 +18,7 @@ const userStore = (state = { loggedIn: false, theme: 'light' }, action) => {
         case LOGOUT:
             return {
                 loggedIn: false,
+                theme: state.theme,
             };
         default:
             return state;
