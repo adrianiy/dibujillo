@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AdrianInsua/dibujillo/compare/v1.2.0...v1.3.0) (2020-09-13)
+
+
+### Features
+
+* **user:** add theme selector ([4edb41e](https://github.com/AdrianInsua/dibujillo/commit/4edb41e81280390a3268c401d2d23b00f9663a61)), closes [#17](https://github.com/AdrianInsua/dibujillo/issues/17) [#20](https://github.com/AdrianInsua/dibujillo/issues/20) [#23](https://github.com/AdrianInsua/dibujillo/issues/23) [#30](https://github.com/AdrianInsua/dibujillo/issues/30) [#30](https://github.com/AdrianInsua/dibujillo/issues/30)
+
 # [1.2.0](https://github.com/AdrianInsua/dibujillo/compare/v1.1.0...v1.2.0) (2020-09-13)
 
 
