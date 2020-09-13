@@ -18,7 +18,7 @@ export default function LandingForms() {
     const dispatch = useDispatch();
 
     /* istanbul ignore next func */
-    useClickAwayEffect(configRef, () => setShowConfigurator(0));
+    useClickAwayEffect(['.configuratorContainer'], () => setShowConfigurator(0));
 
     /* istanbul ignore next func */
     const _googleResponse = (response) => {

@@ -12,7 +12,7 @@ export default function Button({
 
         if (willRenderIcon) {
             return (
-                <em className="material-icons">{ icon }</em>
+                <em className="material-icons-outlined">{ icon }</em>
             );
         }
         return null;
@@ -36,8 +36,11 @@ Button.propTypes = {
     color: PropTypes.string,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    children: PropTypes.elementType,
     testId: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
 };
 
 Button.defaultProps = {

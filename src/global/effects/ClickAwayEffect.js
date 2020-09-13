@@ -1,10 +1,11 @@
 /* istanbul ignore file */
 import { useEffect } from 'react';
 
-export default function useClickAwayEffect(ref, closeHandler) {
+export default function useClickAwayEffect(parents, closeHandler) {
     useEffect(() => {
         function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target) && !event.target.closest('.toasterWrapper')) {
+            const clickOutside = parents.every((parent) => !event.target.closest(parent));
+            if (clickOutside) {
                 closeHandler();
             }
         }
@@ -13,5 +14,5 @@ export default function useClickAwayEffect(ref, closeHandler) {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [ref, closeHandler]);
+    }, [parents, closeHandler]);
 }
