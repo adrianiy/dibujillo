@@ -4,6 +4,9 @@
 .row {
     flex-direction: row;
 }
+.row.fl-1, .column.fl-1 {
+    flex: 1;
+}
 .column {
     flex-direction: column;
 }
