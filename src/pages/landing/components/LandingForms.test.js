@@ -20,16 +20,9 @@ describe('Landing logged test suite', () => {
     });
 
     test('renders Landing test', () => {
-        const { getByText } = rendered;
-        const inputTitleElement = getByText(/Crea un nuevo lienzo!/i);
-        expect(inputTitleElement).toBeInTheDocument();
-    });
-
-    test('input onChange action test', () => {
         const { getByTestId } = rendered;
-        const input = getByTestId('room-id');
-        fireEvent.change(input, { target: { value: 'test' } });
-        expect(input.value).toEqual('test');
+        const configElement = getByTestId('config-private');
+        expect(configElement).toBeInTheDocument();
     });
 
     test('private match configurator test', () => {
@@ -41,9 +34,15 @@ describe('Landing logged test suite', () => {
 
     test('public match configurator test', () => {
         const { getByTestId } = rendered;
+        const pubTab = getByTestId('pub-tab');
+        const privTab = getByTestId('priv-tab');
+        fireEvent.click(pubTab);
         const button = getByTestId('config-public');
         fireEvent.click(button);
         expect(configuratorTestValue).toBeFalsy();
+        fireEvent.click(privTab);
+        const privButton = getByTestId('config-private');
+        expect(privButton).toBeDefined();
     });
 });
 

@@ -24,7 +24,7 @@ const TABS = {
     MINIGAMES: 4,
 };
 
-const Configurator = ({ privateRoom }, ref) => {
+const Configurator = ({ privateRoom, closeCallback }, ref) => {
     const [roomId, setRoomId] = useState(null);
     const [matchConfig, setMatchConfig] = useState(matchConfiguration);
     const [advancedConfig, setAdvancedConfig] = useState(false);
@@ -161,9 +161,14 @@ const Configurator = ({ privateRoom }, ref) => {
             <Button testId="link-button" className="text" icon="link" color="blue" onClick={_copyLink}>
                 Copiar enlace
             </Button>
-            <Button icon="play_arrow" className="playButton" color="black" testId="start-button" onClick={_handleStart}>
-                Iniciar
-            </Button>
+            <RowLayout>
+                <Button className="closeButton" testId="close-button" onClick={() => closeCallback()}>
+                    Cerrar
+                </Button>
+                <Button icon="play_arrow" className="playButton" color="black" testId="start-button" onClick={_handleStart}>
+                    Iniciar
+                </Button>
+            </RowLayout>
         </RowLayout>
     );
 
@@ -181,6 +186,7 @@ const Configurator = ({ privateRoom }, ref) => {
 
 Configurator.propTypes = {
     privateRoom: PropTypes.bool.isRequired,
+    closeCallback: PropTypes.func.isRequired,
 };
 
 export default forwardRef(Configurator);

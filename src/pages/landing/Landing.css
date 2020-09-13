@@ -16,7 +16,7 @@
 }
 .container {
     width: 680px;
-    height: 200px;
+    height: 100%;
 }
 .inputContainer {
     height: 100%;
@@ -48,14 +48,33 @@
 .landingUserMenu {
     position: absolute;
     width: 200px;
-    /* top: -200px; */
     margin-top: -295px;
+}
+.gameTab {
+    color: var(--text-color--light);
+    cursor: pointer;
+    padding: var(--padding--xxs) var(--padding--m);
+    border-top: 2px solid transparent;
+}
+.gameTab:hover {
+    color: var(--text-color--medium);
+}
+.gameTab.active {
+    color: var(--text-color);
+    border-top: var(--border--dark);
+    border-top-width: 2px;
+}
+.matchButtonContainer {
+    height: 100%;
+    padding: var(--padding--l) 0;
+}
+.matchButtonContainer .button {
+    width: 200px;
 }
 
 @media only screen and (max-width: 540px) {
     .container {
         flex-direction: column;
-        height: auto;
     }
     .inputsWrapper {
         height: auto;

@@ -36,7 +36,7 @@ export default function Room() {
         <RowLayout
             testId="ranking-toggle"
             dist="middle spaced"
-            className="closeButton"
+            className="collapseButton"
             onClick={() => setRankingVisibility((state) => !state)}
         >
             <h3>Ranking</h3>
