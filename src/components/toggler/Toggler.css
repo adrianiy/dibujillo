@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 .togglerContainer.active {
-    background: var(--gradient-color--light);
+    background: var(--active-color);
 }
 .toggler {
     background: white;

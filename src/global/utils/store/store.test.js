@@ -13,6 +13,11 @@ describe('store test suite', () => {
             expect(store.getState().user.loggedIn).toBeTruthy();
         });
 
+        test('setTheme test', () => {
+            store.dispatch(actions.user.setTheme('dark'));
+            expect(store.getState().user.theme).toBe('dark');
+        });
+
         test('logout test', () => {
             store.dispatch(actions.user.logout());
             expect(store.getState().user.user).toBe(undefined);

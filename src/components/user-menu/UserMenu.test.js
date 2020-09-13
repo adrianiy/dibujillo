@@ -24,6 +24,16 @@ describe('UserMenu loggedIn test suite', () => {
         expect(userNameElement).toBeDefined();
     });
 
+    test('render theme selector test', () => {
+        const { getByTestId } = rendered;
+        const themeButton = getByTestId('theme-button');
+        fireEvent.click(themeButton);
+        const backButton = getByTestId('back-button');
+        expect(backButton).toBeDefined();
+        fireEvent.click(backButton);
+        expect(getByTestId('theme-button')).toBeDefined();
+    });
+
     test('logout test', () => {
         const { getByTestId } = rendered;
         const button = getByTestId('logout-button');

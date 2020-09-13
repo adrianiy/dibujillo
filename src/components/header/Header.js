@@ -8,12 +8,16 @@ import Avatar from '../avatar/Avatar';
 import { RowLayout } from '../../global/Layout';
 import actions from '../../global/utils/store/actions';
 import UserMenu from '../user-menu/UserMenu';
+import useClickAwayEffect from '../../global/effects/ClickAwayEffect';
 
 export default function Header({ size }) {
     const [userMenuVisibility, setUserMenuVisibility] = useState(false);
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const history = useHistory();
+
+    // istanbul ignore next func
+    useClickAwayEffect(['.AvatarContainer', '.topBarMenu'], () => setUserMenuVisibility(false));
 
     /* istanbul ignore next func */
     const _googleResponse = (response) => {
@@ -32,17 +36,16 @@ export default function Header({ size }) {
 
     const _renderBigHeader = () => (
         <header className="Header">
+            <em className="material-icons-outlined logo">edit</em>
             <h1>
-                <span>Dibujillo</span>
-                .
-                <em className="material-icons-outlined logo">edit</em>
+                Dibujillo
             </h1>
         </header>
     );
 
     const _renderSmallHeader = () => (
         <header className="Header small">
-            <RowLayout dist="spaced middle">
+            <RowLayout dist="spaced middle" className="headerContainer">
                 <em className="material-icons-outlined logo" data-testid="home-button" onClick={_goHome}>edit</em>
                 <Avatar testId="menu-button" image={user.imageUrl} name={user.name} size="small" onClick={_toggleVisibility} />
                 { userMenuVisibility
