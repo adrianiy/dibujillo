@@ -19,12 +19,13 @@ export default function LandingUser() {
 
     const _renderUserInfo = () => (
         <ColumnLayout dist="center middle" className="userContainer">
-            <Avatar testId="avatar" image={user.imageUrl} title={user.name} onClick={_handleClick} />
-            { menuVisibility ? (
-                <UserMenu
-                    className="landingUserMenu"
-                />
-            ) : null }
+            <Avatar testId="avatar" image={user.imageUrl} title={user.name} onClick={_handleClick}>
+                { menuVisibility ? (
+                    <UserMenu
+                        className="landingUserMenu"
+                    />
+                ) : null }
+            </Avatar>
         </ColumnLayout>
     );
 

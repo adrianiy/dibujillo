@@ -47,17 +47,18 @@ export default function Header({ size }) {
         <header className="Header small">
             <RowLayout dist="spaced middle" className="headerContainer">
                 <em className="material-icons-outlined logo" data-testid="home-button" onClick={_goHome}>edit</em>
-                <Avatar testId="menu-button" image={user.imageUrl} name={user.name} size="small" onClick={_toggleVisibility} />
-                { userMenuVisibility
-                    ? (
-                        <UserMenu
-                            className="topBarMenu"
-                            closeCallback={
-                                // istanbul ignore next func
-                                () => setUserMenuVisibility(false)
-                            }
-                        />
-                    ) : null }
+                <Avatar testId="menu-button" image={user.imageUrl} name={user.name} size="small" onClick={_toggleVisibility}>
+                    { userMenuVisibility
+                        ? (
+                            <UserMenu
+                                className="topBarMenu"
+                                closeCallback={
+                                    // istanbul ignore next func
+                                    () => setUserMenuVisibility(false)
+                                }
+                            />
+                        ) : null }
+                </Avatar>
             </RowLayout>
             <GoogleLogin
                 className="HiddenLoginButton"

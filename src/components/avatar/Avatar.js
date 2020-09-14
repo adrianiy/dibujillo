@@ -4,7 +4,7 @@ import './Avatar.css';
 import cls from '../../global/utils';
 
 export default function Avatar({
-    image, gradient, title, size, onClick, testId,
+    image, gradient, title, size, onClick, testId, children,
 }) {
     return (
         <div
@@ -16,6 +16,7 @@ export default function Avatar({
             <div className="Avatar">
                 <img data-testid="image" src={image} alt="avatar" />
             </div>
+            { children }
         </div>
     );
 }
@@ -27,6 +28,10 @@ Avatar.propTypes = {
     size: PropTypes.string,
     onClick: PropTypes.func,
     testId: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
 };
 
 Avatar.defaultProps = {
@@ -35,4 +40,5 @@ Avatar.defaultProps = {
     size: 'big',
     onClick: null,
     testId: '',
+    children: null,
 };
