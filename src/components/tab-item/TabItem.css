@@ -12,6 +12,8 @@
     font-size: 21px;
     padding: var(--padding--xs);
     border-radius: 100%;
+    background: var(--bg-color);
+    z-index: 2;
 }
 
 .tabItem.active {
@@ -25,8 +27,8 @@
 
 .stepConnector {
     top: 27px;
-    left: calc(-50% + 27px);
-    right: calc(50% + 27px);
+    left: calc(-50% + 10px);
+    right: calc(50% + 10px);
     position: absolute;
 }
 .stepConnector-line {
@@ -49,7 +51,7 @@
         right: 50%;
     }
     .tabItem em {
-        background: var(--bg-color);
+        background: var(--bg-color--secondary);
         z-index: 2;
     }
 }
