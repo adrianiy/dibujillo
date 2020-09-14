@@ -19,12 +19,13 @@
     padding: var(--padding--xs) var(--padding--m);
 }
 .Header .logo {
-    font-size: 83px;
+    font-size: 43px;
     padding: var(--padding--xs) var(--padding--l);
     background: var(--gradient-color--light);
     color: var(--text-color--contrast);
     border-radius: 10px;
     margin-right: var(--padding--m);
+    margin-top: -13px;
 }
 .Header.small .logo {
     font-size: 24px;
