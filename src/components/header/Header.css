@@ -25,13 +25,14 @@
     color: var(--text-color--contrast);
     border-radius: 10px;
     margin-right: var(--padding--m);
-    margin-top: -13px;
+    margin-top: -11px;
 }
 .Header.small .logo {
     font-size: 24px;
     padding: var(--padding--xxs) var(--padding--s);
     cursor: pointer;
     border-radius: 4px;
+    margin-top: 0;
 }
 .Header h1 {
     margin: 0;
@@ -51,14 +52,6 @@
     right: var(--padding--m);
 }
 
-@media only screen and (max-width: 740px) {
-    .Header h1 {
-        font-size: 100px;
-    }
-    .Header h1 em {
-        font-size: 100px;
-    }
-}
 @media only screen and (max-width: 540px) {
     .Header h1 {
         display: none;

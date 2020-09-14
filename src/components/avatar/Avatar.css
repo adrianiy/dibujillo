@@ -29,3 +29,10 @@
     width: 30px;
     height: 30px;
 }
+
+@media only screen and (max-width: 540px) {
+    .AvatarContainer.big {
+        height: 70px;
+        width: 70px;
+    }
+}
