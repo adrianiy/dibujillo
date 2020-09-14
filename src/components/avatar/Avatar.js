@@ -10,10 +10,9 @@ export default function Avatar({
         <div
             className={cls('AvatarContainer', size, gradient ? 'gradient' : '')}
             title={title}
-            onClick={onClick}
             data-testid={testId}
         >
-            <div className="Avatar">
+            <div className="Avatar" onClick={onClick}>
                 <img data-testid="image" src={image} alt="avatar" />
             </div>
             { children }
