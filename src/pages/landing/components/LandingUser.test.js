@@ -21,11 +21,9 @@ describe('Landing logged test suite', () => {
     });
 
     test('userMenu appears test', () => {
-        const { getByTestId, getByText } = rendered;
+        const { getByTestId } = rendered;
         const input = getByTestId('avatar');
         fireEvent.click(input);
-        const userName = getByText('test');
-        expect(userName).toBeInTheDocument();
     });
 });
 
