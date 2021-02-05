@@ -7,6 +7,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './global/utils/store/store';
 
+require('dotenv').config();
+
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
