@@ -1,10 +1,9 @@
-import React, {
-    useEffect, useState, useCallback,
-} from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { ColumnLayout, RowLayout } from '../../global/Layout';
+import { createNewMatch } from '../../global/services/websocketService';
 
 import './Configurator.css';
 import Button from '../button/Button';
@@ -40,14 +39,14 @@ const Configurator = ({ privateRoom, closeCallback }) => {
     useEffect(() => {
         const { href } = window.location;
         const userId = user.name;
-        const time = (new Date()).getDate();
+        const time = new Date().getDate();
         const newRoomId = btoa(`${userId}${time}`);
         setRoomId(newRoomId);
-        updateMatchConfig({ name: `${user.name}'s room`, href: `${href}?roomId=${newRoomId}` });
+        updateMatchConfig({ name: `${user.name}'s room`, href: `${href}?roomId=${newRoomId}`, hash: newRoomId });
     }, [user.name, updateMatchConfig]);
 
     const _handleStart = () => {
-        localStorage.setItem('roomConfig', JSON.stringify(matchConfig));
+        createNewMatch(matchConfig);
         history.push(`room/${roomId}`);
     };
 
@@ -67,11 +66,11 @@ const Configurator = ({ privateRoom, closeCallback }) => {
         dispatch(actions.toaster.setOkToaster({ text: 'Link copiado!' }));
     };
 
-    const _renderShareSection = () => (
-        privateRoom
-            ? <BasicPrivateConfiguration roomName={matchConfig.name} updateMatchConfig={updateMatchConfig} />
-            : <BasicPublicConfiguration />
-    );
+    const _renderShareSection = () => (privateRoom ? (
+        <BasicPrivateConfiguration roomName={matchConfig.name} updateMatchConfig={updateMatchConfig} />
+    ) : (
+        <BasicPublicConfiguration />
+    ));
 
     const _renderConfig = () => {
         switch (configTab) {
@@ -94,10 +93,10 @@ const Configurator = ({ privateRoom, closeCallback }) => {
         <RowLayout dist="middle spaced" className="header">
             <h2>
                 Configura tu partida
-                { privateRoom ? ' privada' : ' pública' }
+                {privateRoom ? ' privada' : ' pública'}
             </h2>
             <Button testId="adv-conf-button" className="text" color="blue" icon="settings" onClick={_toggleAdvancedConfig}>
-                { advancedConfig ? 'Configuración básica' : 'Configuración avanzada' }
+                {advancedConfig ? 'Configuración básica' : 'Configuración avanzada'}
             </Button>
         </RowLayout>
     );
@@ -175,10 +174,10 @@ const Configurator = ({ privateRoom, closeCallback }) => {
     return (
         <RowLayout testId="configurator" className="configuratorContainer">
             <ColumnLayout dist="fl-1">
-                { _renderHeader() }
-                { _renderTabs() }
-                { _renderConfig() }
-                { _renderBottomButtons() }
+                {_renderHeader()}
+                {_renderTabs()}
+                {_renderConfig()}
+                {_renderBottomButtons()}
             </ColumnLayout>
         </RowLayout>
     );
