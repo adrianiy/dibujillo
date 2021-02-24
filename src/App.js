@@ -10,6 +10,13 @@ import cls from './global/utils';
 function App() {
     const user = useSelector((state) => state.user);
 
+    const testCall = async () => {
+        const result = await fetch('https://www.zara.com/es/en/-p0.html?v1=85788265&&ajax=true');
+        console.log(result);
+    };
+
+    testCall();
+
     return (
         <div className={cls('App', user.theme)}>
             <Toaster />
